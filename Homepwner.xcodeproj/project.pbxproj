@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		77CC84231FCAA0C6002CD8E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84221FCAA0C6002CD8E4 /* AppDelegate.swift */; };
-		77CC84251FCAA0C6002CD8E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84241FCAA0C6002CD8E4 /* ViewController.swift */; };
 		77CC84281FCAA0C6002CD8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77CC84261FCAA0C6002CD8E4 /* Main.storyboard */; };
 		77CC842A1FCAA0C6002CD8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77CC84291FCAA0C6002CD8E4 /* Assets.xcassets */; };
 		77CC842D1FCAA0C6002CD8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77CC842B1FCAA0C6002CD8E4 /* LaunchScreen.storyboard */; };
 		77CC84381FCAA0C7002CD8E4 /* HomepwnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84371FCAA0C7002CD8E4 /* HomepwnerTests.swift */; };
 		77CC84431FCAA0C7002CD8E4 /* HomepwnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84421FCAA0C7002CD8E4 /* HomepwnerUITests.swift */; };
 		77CC84511FCADC1A002CD8E4 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */; };
+		77CC84531FCADCF6002CD8E4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84521FCADCF6002CD8E4 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		77CC841F1FCAA0C6002CD8E4 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77CC84221FCAA0C6002CD8E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77CC84241FCAA0C6002CD8E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77CC84271FCAA0C6002CD8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77CC84291FCAA0C6002CD8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77CC842C1FCAA0C6002CD8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		77CC84421FCAA0C7002CD8E4 /* HomepwnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepwnerUITests.swift; sourceTree = "<group>"; };
 		77CC84441FCAA0C7002CD8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		77CC84521FCADCF6002CD8E4 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				77CC84221FCAA0C6002CD8E4 /* AppDelegate.swift */,
-				77CC84241FCAA0C6002CD8E4 /* ViewController.swift */,
 				77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */,
+				77CC84521FCADCF6002CD8E4 /* Item.swift */,
 				77CC84261FCAA0C6002CD8E4 /* Main.storyboard */,
 				77CC84291FCAA0C6002CD8E4 /* Assets.xcassets */,
 				77CC842B1FCAA0C6002CD8E4 /* LaunchScreen.storyboard */,
@@ -262,8 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77CC84251FCAA0C6002CD8E4 /* ViewController.swift in Sources */,
 				77CC84511FCADC1A002CD8E4 /* ItemsViewController.swift in Sources */,
+				77CC84531FCADCF6002CD8E4 /* Item.swift in Sources */,
 				77CC84231FCAA0C6002CD8E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
