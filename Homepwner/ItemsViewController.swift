@@ -36,19 +36,27 @@ class ItemsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        // total number of rows  = number of items in item store
+        return itemStore.allItems.count
+
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        // Set the text on the cell with the description of the item that is at the nth index of items
+        // where n = row this cell will appear in on the tableview
+        let item = itemStore.allItems[indexPath.row]
+        
+        cell.textLabel?.text = item.name
+        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
