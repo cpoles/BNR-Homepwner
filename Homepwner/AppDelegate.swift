@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // crete an itemStore
+        let itemStore = ItemStore()
+        
+        // Access the ItemsViewController and set its item store
+        let itemsController = window!.rootViewController as! ItemsViewController
+        itemsController.itemStore = itemStore
+        
+
         return true
     }
 
