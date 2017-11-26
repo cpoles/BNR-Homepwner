@@ -15,6 +15,7 @@
 		77CC84431FCAA0C7002CD8E4 /* HomepwnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84421FCAA0C7002CD8E4 /* HomepwnerUITests.swift */; };
 		77CC84511FCADC1A002CD8E4 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */; };
 		77CC84531FCADCF6002CD8E4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84521FCADCF6002CD8E4 /* Item.swift */; };
+		77CC84551FCAE050002CD8E4 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84541FCAE050002CD8E4 /* ItemStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		77CC84441FCAA0C7002CD8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		77CC84521FCADCF6002CD8E4 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		77CC84541FCAE050002CD8E4 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				77CC84221FCAA0C6002CD8E4 /* AppDelegate.swift */,
 				77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */,
 				77CC84521FCADCF6002CD8E4 /* Item.swift */,
+				77CC84541FCAE050002CD8E4 /* ItemStore.swift */,
 				77CC84261FCAA0C6002CD8E4 /* Main.storyboard */,
 				77CC84291FCAA0C6002CD8E4 /* Assets.xcassets */,
 				77CC842B1FCAA0C6002CD8E4 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				77CC84511FCADC1A002CD8E4 /* ItemsViewController.swift in Sources */,
 				77CC84531FCADCF6002CD8E4 /* Item.swift in Sources */,
+				77CC84551FCAE050002CD8E4 /* ItemStore.swift in Sources */,
 				77CC84231FCAA0C6002CD8E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
