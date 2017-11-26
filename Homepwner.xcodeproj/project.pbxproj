@@ -14,6 +14,7 @@
 		77CC842D1FCAA0C6002CD8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77CC842B1FCAA0C6002CD8E4 /* LaunchScreen.storyboard */; };
 		77CC84381FCAA0C7002CD8E4 /* HomepwnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84371FCAA0C7002CD8E4 /* HomepwnerTests.swift */; };
 		77CC84431FCAA0C7002CD8E4 /* HomepwnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84421FCAA0C7002CD8E4 /* HomepwnerUITests.swift */; };
+		77CC84511FCADC1A002CD8E4 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		77CC843E1FCAA0C7002CD8E4 /* HomepwnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomepwnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77CC84421FCAA0C7002CD8E4 /* HomepwnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepwnerUITests.swift; sourceTree = "<group>"; };
 		77CC84441FCAA0C7002CD8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				77CC84221FCAA0C6002CD8E4 /* AppDelegate.swift */,
 				77CC84241FCAA0C6002CD8E4 /* ViewController.swift */,
+				77CC84501FCADC1A002CD8E4 /* ItemsViewController.swift */,
 				77CC84261FCAA0C6002CD8E4 /* Main.storyboard */,
 				77CC84291FCAA0C6002CD8E4 /* Assets.xcassets */,
 				77CC842B1FCAA0C6002CD8E4 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77CC84251FCAA0C6002CD8E4 /* ViewController.swift in Sources */,
+				77CC84511FCADC1A002CD8E4 /* ItemsViewController.swift in Sources */,
 				77CC84231FCAA0C6002CD8E4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +511,7 @@
 				77CC84491FCAA0C7002CD8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77CC844A1FCAA0C7002CD8E4 /* Build configuration list for PBXNativeTarget "HomepwnerTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				77CC844C1FCAA0C7002CD8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		77CC844D1FCAA0C7002CD8E4 /* Build configuration list for PBXNativeTarget "HomepwnerUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				77CC844F1FCAA0C7002CD8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
