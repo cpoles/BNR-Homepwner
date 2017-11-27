@@ -24,36 +24,56 @@ class ItemsViewController: UITableViewController {
         tableView.scrollIndicatorInsets = insets
     }
     
-    
-    
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // only one section in this tableView
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        // total number of rows  = number of items in item store
-        return itemStore.allItems.count
-
+        // numberOfRowsInEachSection
+        if section == 0 {
+            return itemStore.allItems.filter { $0.valueInDollars > 50 }.count
+        } else {
+            return itemStore.allItems.filter { $0.valueInDollars < 50 }.count
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Over $50"
+        } else {
+            return "Below $50"
+        }
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
 
-        // Configure the cell...
-        // Set the text on the cell with the description of the item that is at the nth index of items
-        // where n = row this cell will appear in on the tableview
-        let item = itemStore.allItems[indexPath.row]
+        if indexPath.section == 0 { // section "Over 50"
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            let aboveFifty = itemStore.allItems.filter { $0.valueInDollars > 50 }.sorted { $0.valueInDollars < $1.valueInDollars }
+            
+            // Configure the cell...
+            // Set the text on the cell with the description of the item that is at the nth index of items
+            // where n = row this cell will appear in on the tableview
+            let item  = aboveFifty[indexPath.row]
+            
+            cell.textLabel?.text = item.name
+            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
 
-        return cell
+            return cell
+            
+        } else {
+            let belowFifty = itemStore.allItems.filter { $0.valueInDollars < 50 }.sorted { $0.valueInDollars < $1.valueInDollars }
+            let item = belowFifty[indexPath.row]
+            
+            cell.textLabel?.text = item.name
+            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            
+            return cell
+        }
     }
  
 
