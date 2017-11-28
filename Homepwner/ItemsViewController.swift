@@ -12,7 +12,7 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
-    
+    // MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +24,7 @@ class ItemsViewController: UITableViewController {
         tableView.scrollIndicatorInsets = insets
     }
     
-    // MARK: - Table view data source
+    // MARK: - TableView Data Source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // only one section in this tableView
@@ -33,49 +33,56 @@ class ItemsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // numberOfRowsInEachSection
-        if section == 0 {
-            return itemStore.allItems.filter { $0.valueInDollars > 50 }.count
-        } else {
-            return itemStore.allItems.filter { $0.valueInDollars < 50 }.count
+        switch section {
+        case 0:
+            return itemStore.allItems.filter { $0.valueInDollars > 50 }.count + 1 // add an extra row for the "no more items" warning
+        default:
+            return itemStore.allItems.filter { $0.valueInDollars < 50 }.count + 1
         }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Over $50"
-        } else {
-            return "Below $50"
-        }
+       // set section header titles
+       return  section == 0 ? "Over $50" : "Below $50"
+ 
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
 
-        if indexPath.section == 0 { // section "Over 50"
-        
+        switch indexPath.section  { // section "Over 50"
+        case 0:
             let aboveFifty = itemStore.allItems.filter { $0.valueInDollars > 50 }.sorted { $0.valueInDollars < $1.valueInDollars }
-            
-            // Configure the cell...
-            // Set the text on the cell with the description of the item that is at the nth index of items
-            // where n = row this cell will appear in on the tableview
-            let item  = aboveFifty[indexPath.row]
-            
-            cell.textLabel?.text = item.name
-            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-
+            let numberOfRows = tableView.numberOfRows(inSection: indexPath.section)
+            // Display "No more items in the last row of the table view."
+            if indexPath.row == numberOfRows - 1 {
+                cell.textLabel?.text = "No more items."
+                cell.detailTextLabel?.text = nil
+            } else {
+                // Configure the cell...
+                // Set the text on the cell with the description of the item that is at the nth index of items
+                // where n = row this cell will appear in on the tableview
+                let item  = aboveFifty[indexPath.row]
+                cell.textLabel?.text = item.name
+                cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            }
             return cell
-            
-        } else {
+        default:
             let belowFifty = itemStore.allItems.filter { $0.valueInDollars < 50 }.sorted { $0.valueInDollars < $1.valueInDollars }
-            let item = belowFifty[indexPath.row]
-            
-            cell.textLabel?.text = item.name
-            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-            
+            let numberOfRows = tableView.numberOfRows(inSection: indexPath.section)
+            if indexPath.row == numberOfRows - 1 {
+                cell.textLabel?.text = "No more items."
+                cell.detailTextLabel?.text = nil
+            } else {
+                let item = belowFifty[indexPath.row]
+                
+                cell.textLabel?.text = item.name
+                cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+            }
             return cell
         }
     }
- 
+
 
     /*
     // Override to support conditional editing of the table view.
