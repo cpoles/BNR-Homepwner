@@ -12,6 +12,14 @@ class ItemStore {
     
     var allItems = [Item]()
     
+    var aboveFifty: [Item] {
+        return allItems.filter { $0.valueInDollars > 50 }.sorted { $0.valueInDollars > $1.valueInDollars }
+    }
+    
+    var belowFifty: [Item] {
+        return allItems.filter { $0.valueInDollars < 50 }.sorted { $0.valueInDollars > $1.valueInDollars }
+    }
+    
     @discardableResult func createItem() -> Item {
         
         let newItem = Item(random: true)

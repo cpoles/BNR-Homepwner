@@ -35,9 +35,9 @@ class ItemsViewController: UITableViewController {
         // numberOfRowsInEachSection
         switch section {
         case 0:
-            return itemStore.allItems.filter { $0.valueInDollars > 50 }.count + 1 // add an extra row for the "no more items" warning
+            return itemStore.aboveFifty.count
         default:
-            return itemStore.allItems.filter { $0.valueInDollars < 50 }.count + 1
+            return itemStore.belowFifty.count + 1 // add an extra row for the "no more items" warning
         }
     }
     
@@ -52,30 +52,23 @@ class ItemsViewController: UITableViewController {
 
         switch indexPath.section  { // section "Over 50"
         case 0:
-            let aboveFifty = itemStore.allItems.filter { $0.valueInDollars > 50 }.sorted { $0.valueInDollars < $1.valueInDollars }
-            let numberOfRows = tableView.numberOfRows(inSection: indexPath.section)
-            // Display "No more items in the last row of the table view."
-            if indexPath.row == numberOfRows - 1 {
-                cell.textLabel?.text = "No more items."
-                cell.detailTextLabel?.text = nil
-            } else {
-                // Configure the cell...
-                // Set the text on the cell with the description of the item that is at the nth index of items
-                // where n = row this cell will appear in on the tableview
-                let item  = aboveFifty[indexPath.row]
-                cell.textLabel?.text = item.name
-                cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-            }
+            let aboveFifty = itemStore.aboveFifty
+            // Configure the cell...
+            // Set the text on the cell with the description of the item that is at the nth index of items
+            // where n = row this cell will appear in on the tableview
+            let item  = aboveFifty[indexPath.row]
+            cell.textLabel?.text = item.name
+            cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+
             return cell
         default:
-            let belowFifty = itemStore.allItems.filter { $0.valueInDollars < 50 }.sorted { $0.valueInDollars < $1.valueInDollars }
+            let belowFifty = itemStore.belowFifty
             let numberOfRows = tableView.numberOfRows(inSection: indexPath.section)
             if indexPath.row == numberOfRows - 1 {
                 cell.textLabel?.text = "No more items."
                 cell.detailTextLabel?.text = nil
             } else {
                 let item = belowFifty[indexPath.row]
-                
                 cell.textLabel?.text = item.name
                 cell.detailTextLabel?.text = "$\(item.valueInDollars)"
             }
@@ -83,6 +76,18 @@ class ItemsViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 60
+        default:
+            if indexPath.row == itemStore.belowFifty.count {
+                return 44
+            } else {
+                return 60
+            }
+       }
+   }
 
     /*
     // Override to support conditional editing of the table view.
